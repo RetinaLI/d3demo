@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p.big {
+            font-size: 30px;
+
+        }
+
+        p.pink {
+            color: 'pink'
+        }
+    </style>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+</head>
+
+<body>
+    <h1>title</h1>
+    <h1>hhhhhhhhhhhh</h1>
+    <p>this is a paragraph</p>
+    <p>p2p2p2p</p>
+    <div></div>
+    <script>
+
+        var h = d3.select('h1');
+        console.log(h.text());
+        var allH = d3.selectAll('h1');
+        // allH.text('ccccccccccnnnng');
+        d3.select('p').style('color', 'green');
+        d3.select('p').classed('big', true);
+
+        var str = 'divdiv';
+        d3.select('div').datum(str).text(function (d, i) {
+            return 'gegeeg';
+        });
+        var arr =['1111', '2222222']
+        allH.data(arr).text(function(d, i) {
+            return d
+        })
+
+    </script>
+</body>
+
+</html>

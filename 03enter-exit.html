@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+</head>
+<body>
+    <p></p>
+    <p></p>
+
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+
+    <script>
+        var dataset = [11, 22, 33, 44];
+        var updaters = d3.select('body').selectAll('p').data(dataset);
+        var enter = updaters.enter();
+        updaters.text(function(d, i) {
+            return d;
+        })
+        enter.append('p').text(function(d, i) {
+            return d;
+        })
+
+        var arr =['aa'];
+        var updaters2 = d3.select('body').selectAll('h2').data(arr);
+        var exit = updaters2.exit();
+        updaters2.text(function(d, i) {
+            return d;
+        });
+        console.log(exit);
+        exit.remove();
+
+
+        // d3.range(start,stop,step)
+    </script>
+</body>
+</html>

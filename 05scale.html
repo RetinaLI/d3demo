@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    svg{
+      height: 500px;
+      width: 500px;
+      background: pink;
+    }
+  </style>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+  <svg></svg>
+  <script>
+		let scale1 = d3.scaleLinear().domain([1,5]).range([0,100])
+		// console.log(scale1(2));
+
+		let scale2 = d3.scaleBand().domain([1,2]).range([0,100])
+		// console.log(scale2(2));
+		// console.log(scale2(3));
+		// console.log(scale2(5));
+
+		let scale3 = d3.scaleOrdinal().domain(['aa', 'bb', 'cc']).range([10, 20, 30]);
+		// console.log(scale3('aa'));
+		// console.log(scale3('fffa'));
+		// console.log(scale3('fffbbb'));
+
+		let scale4 = d3.scaleQuantize().domain([0, 12]).range(['small', 'medium', 'large'])
+		// console.log(scale4(0));
+		// console.log(scale4(8));
+		// console.log(scale4(12));
+
+		let scale5 = d3.scaleTime().domain([new Date(2000, 0, 1, 0), new Date(2020, 0, 1, 2)]).range([0, 100]);
+		console.log(scale5(new Date('2018-09-17')));
+		console.log(scale5(8));
+		console.log(scale5(new Date(2019, 0, 1, 12)));
+
+
+  </script>
+</body>
+</html>
